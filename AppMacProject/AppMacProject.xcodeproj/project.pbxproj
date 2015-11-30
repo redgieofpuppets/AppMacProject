@@ -12,6 +12,9 @@
 		D4EEA1481C0C923C0010775B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4EEA1461C0C923C0010775B /* Main.storyboard */; };
 		D4EEA14A1C0C923C0010775B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4EEA1491C0C923C0010775B /* Assets.xcassets */; };
 		D4EEA14D1C0C923C0010775B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4EEA14B1C0C923C0010775B /* LaunchScreen.storyboard */; };
+		D4EEA1551C0C93F40010775B /* CoffeesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EEA1541C0C93F40010775B /* CoffeesViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		D4EEA1571C0C95930010775B /* Coffee.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EEA1561C0C95930010775B /* Coffee.swift */; settings = {ASSET_TAGS = (); }; };
+		D4EEA1591C0C976A0010775B /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EEA1581C0C976A0010775B /* SampleData.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		D4EEA1491C0C923C0010775B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D4EEA14C1C0C923C0010775B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D4EEA14E1C0C923C0010775B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D4EEA1541C0C93F40010775B /* CoffeesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoffeesViewController.swift; sourceTree = "<group>"; };
+		D4EEA1561C0C95930010775B /* Coffee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coffee.swift; sourceTree = "<group>"; };
+		D4EEA1581C0C976A0010775B /* SampleData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +63,9 @@
 				D4EEA1421C0C923C0010775B /* AppDelegate.swift */,
 				D4EEA1441C0C923C0010775B /* ViewController.swift */,
 				D4EEA1461C0C923C0010775B /* Main.storyboard */,
+				D4EEA1561C0C95930010775B /* Coffee.swift */,
+				D4EEA1541C0C93F40010775B /* CoffeesViewController.swift */,
+				D4EEA1581C0C976A0010775B /* SampleData.swift */,
 				D4EEA1491C0C923C0010775B /* Assets.xcassets */,
 				D4EEA14B1C0C923C0010775B /* LaunchScreen.storyboard */,
 				D4EEA14E1C0C923C0010775B /* Info.plist */,
@@ -135,7 +144,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4EEA1451C0C923C0010775B /* ViewController.swift in Sources */,
+				D4EEA1551C0C93F40010775B /* CoffeesViewController.swift in Sources */,
 				D4EEA1431C0C923C0010775B /* AppDelegate.swift in Sources */,
+				D4EEA1591C0C976A0010775B /* SampleData.swift in Sources */,
+				D4EEA1571C0C95930010775B /* Coffee.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
