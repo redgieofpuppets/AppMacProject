@@ -14,7 +14,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CoffeeCell" rowHeight="55" id="lkI-xu-D7O" customClass="CoffeeCell" customModule="AppMacProject" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="22" width="320" height="55"/>
+                                <rect key="frame" x="0.0" y="86" width="320" height="55"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lkI-xu-D7O" id="J06-3v-Sqo">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="54"/>
@@ -44,6 +44,7 @@
                                     <outlet property="nameLabel" destination="XA9-xa-R0M" id="DAr-OD-Sw9"/>
                                     <outlet property="ratingImageView" destination="VEd-2Z-b23" id="oZZ-5j-tuh"/>
                                     <outlet property="shopLabel" destination="347-V8-GXs" id="ba8-bb-rYr"/>
+                                    <segue destination="ggl-2D-6Mi" kind="modal" identifier="EditCoffee" id="3cJ-iE-obZ"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -55,7 +56,7 @@
                     <navigationItem key="navigationItem" title="Coffees" id="K3r-nO-Uhm">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="oU4-UK-GDh">
                             <connections>
-                                <segue destination="ggl-2D-6Mi" kind="modal" id="En5-GF-eQg"/>
+                                <segue destination="ggl-2D-6Mi" kind="modal" identifier="AddCoffee" id="En5-GF-eQg"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -229,4 +230,7 @@
             <point key="canvasLocation" x="113" y="354"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="En5-GF-eQg"/>
+    </inferredMetricsTieBreakers>
 </document>

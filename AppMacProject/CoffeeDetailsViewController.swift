@@ -12,6 +12,7 @@ class CoffeeDetailsViewController: UITableViewController {
     
     var coffee:Coffee!
     var shop:String = "Centra"
+    var coffeeToEdit:Coffee?
     
     @IBOutlet weak var nameTextField: UITextField!
     
