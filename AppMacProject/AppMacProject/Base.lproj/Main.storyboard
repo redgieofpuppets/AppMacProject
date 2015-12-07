@@ -8,34 +8,40 @@
         <scene sceneID="yaG-NE-1Dc">
             <objects>
                 <tableViewController id="Ifz-Uv-OLv" customClass="CoffeesViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="aGu-l6-AsF">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="55" sectionHeaderHeight="28" sectionFooterHeight="28" id="aGu-l6-AsF">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CoffeeCell" textLabel="U9l-lY-kbv" detailTextLabel="EOr-6L-Csd" style="IBUITableViewCellStyleSubtitle" id="FRX-7L-K3a">
-                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CoffeeCell" rowHeight="55" id="FRX-7L-K3a" customClass="CoffeeCell" customModule="AppMacProject" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="320" height="55"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FRX-7L-K3a" id="9Wb-xH-x8k">
-                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="54"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="U9l-lY-kbv">
-                                            <rect key="frame" x="15" y="5" width="32" height="20"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0T2-ne-Apu">
+                                            <rect key="frame" x="15" y="0.0" width="190" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="EOr-6L-Csd">
-                                            <rect key="frame" x="15" y="25" width="41" height="14"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Shop" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mFJ-0H-ADh">
+                                            <rect key="frame" x="15" y="25" width="190" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" tag="102" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U65-gO-tVy">
+                                            <rect key="frame" x="206" y="13" width="81" height="27"/>
+                                        </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="nameLabel" destination="0T2-ne-Apu" id="i3C-tL-lTt"/>
+                                    <outlet property="ratingImageView" destination="U65-gO-tVy" id="HJ2-Kw-V4U"/>
+                                    <outlet property="shopLabel" destination="mFJ-0H-ADh" id="1iF-tZ-8Yi"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -47,7 +53,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="glh-69-63k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="551.4666666666667" y="346.48000000000002"/>
+            <point key="canvasLocation" x="551" y="346"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="H3E-6C-rvW">

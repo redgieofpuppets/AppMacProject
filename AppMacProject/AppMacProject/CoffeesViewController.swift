@@ -1,10 +1,4 @@
-//
-//  CoffeesViewController.swift
-//  CoffeeMate
-//
-//  Created by Robert O'Connor on 01/02/2015.
-//  Copyright (c) 2015 WIT. All rights reserved.
-//
+
 
 import UIKit
 
@@ -85,7 +79,7 @@ class CoffeesViewController: UITableViewController {
             return cell
             */
             
-            /*
+        
             // Take 2
             let cell = tableView.dequeueReusableCellWithIdentifier("CoffeeCell", forIndexPath: indexPath) as UITableViewCell //1
             
@@ -101,18 +95,18 @@ class CoffeesViewController: UITableViewController {
             ratingImageView.image = self.imageForRating(coffee.rating)
             }
             return cell
-            */
             
-            // Take 3
-            let cell = tableView.dequeueReusableCellWithIdentifier("CoffeeCell", forIndexPath: indexPath)
-                as! CoffeeCell
-            
-            let coffee = coffees[indexPath.row] as Coffee
-            cell.nameLabel.text = coffee.name
-            cell.shopLabel.text = coffee.shop
-            cell.ratingImageView.image = imageForRating(coffee.rating)
-            return cell
-    }
+//            
+//            // Take 3
+//            let cell = tableView.dequeueReusableCellWithIdentifier("CoffeeCell", forIndexPath: indexPath)
+//                as! CoffeeCell
+//            
+//            let coffee = coffees[indexPath.row] as Coffee
+//            cell.nameLabel.text = coffee.name
+//            cell.shopLabel.text = coffee.shop
+//            cell.ratingImageView.image = imageForRating(coffee.rating)
+//            return cell
+//    }
     
     /*
     // Override to support conditional editing of the table view.
