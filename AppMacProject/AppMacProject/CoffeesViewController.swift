@@ -1,4 +1,10 @@
-
+//
+//  CoffeesViewController.swift
+//  AppMacProject
+//
+//  Created by 20064234 on 30/11/2015.
+//  Copyright © 2015 WIT. All rights reserved.
+//
 
 import UIKit
 
@@ -79,7 +85,7 @@ class CoffeesViewController: UITableViewController {
             return cell
             */
             
-        
+            /*
             // Take 2
             let cell = tableView.dequeueReusableCellWithIdentifier("CoffeeCell", forIndexPath: indexPath) as UITableViewCell //1
             
@@ -95,18 +101,18 @@ class CoffeesViewController: UITableViewController {
             ratingImageView.image = self.imageForRating(coffee.rating)
             }
             return cell
+            */
             
-//            
-//            // Take 3
-//            let cell = tableView.dequeueReusableCellWithIdentifier("CoffeeCell", forIndexPath: indexPath)
-//                as! CoffeeCell
-//            
-//            let coffee = coffees[indexPath.row] as Coffee
-//            cell.nameLabel.text = coffee.name
-//            cell.shopLabel.text = coffee.shop
-//            cell.ratingImageView.image = imageForRating(coffee.rating)
-//            return cell
-//    }
+            // Take 3
+            let cell = tableView.dequeueReusableCellWithIdentifier("CoffeeCell", forIndexPath: indexPath)
+                as! CoffeeCell
+            
+            let coffee = coffees[indexPath.row] as Coffee
+            cell.nameLabel.text = coffee.name
+            cell.shopLabel.text = coffee.shop
+            cell.ratingImageView.image = imageForRating(coffee.rating)
+            return cell
+    }
     
     /*
     // Override to support conditional editing of the table view.

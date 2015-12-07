@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		D4C92DA61C15C94C0094496B /* CoffeeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C92DA51C15C94C0094496B /* CoffeeCell.swift */; settings = {ASSET_TAGS = (); }; };
+		D4C92DAA1C15D2D90094496B /* CoffeeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C92DA91C15D2D90094496B /* CoffeeDetailsViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		D4C92DAC1C15E0190094496B /* ShopPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C92DAB1C15E0190094496B /* ShopPickerViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		D4EEA1431C0C923C0010775B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EEA1421C0C923C0010775B /* AppDelegate.swift */; };
 		D4EEA1451C0C923C0010775B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EEA1441C0C923C0010775B /* ViewController.swift */; };
 		D4EEA1481C0C923C0010775B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4EEA1461C0C923C0010775B /* Main.storyboard */; };
@@ -40,6 +42,8 @@
 
 /* Begin PBXFileReference section */
 		D4C92DA51C15C94C0094496B /* CoffeeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoffeeCell.swift; sourceTree = "<group>"; };
+		D4C92DA91C15D2D90094496B /* CoffeeDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoffeeDetailsViewController.swift; path = ../CoffeeDetailsViewController.swift; sourceTree = "<group>"; };
+		D4C92DAB1C15E0190094496B /* ShopPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopPickerViewController.swift; sourceTree = "<group>"; };
 		D4EEA13F1C0C923C0010775B /* AppMacProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppMacProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4EEA1421C0C923C0010775B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D4EEA1441C0C923C0010775B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -106,12 +110,14 @@
 				D4EEA1421C0C923C0010775B /* AppDelegate.swift */,
 				D4EEA1441C0C923C0010775B /* ViewController.swift */,
 				D4EEA1461C0C923C0010775B /* Main.storyboard */,
-				D4EEA1561C0C95930010775B /* Coffee.swift */,
-				D4EEA1541C0C93F40010775B /* CoffeesViewController.swift */,
-				D4C92DA51C15C94C0094496B /* CoffeeCell.swift */,
-				D4EEA1581C0C976A0010775B /* SampleData.swift */,
 				D4EEA1491C0C923C0010775B /* Assets.xcassets */,
 				D4EEA14B1C0C923C0010775B /* LaunchScreen.storyboard */,
+				D4EEA1541C0C93F40010775B /* CoffeesViewController.swift */,
+				D4C92DAB1C15E0190094496B /* ShopPickerViewController.swift */,
+				D4C92DA91C15D2D90094496B /* CoffeeDetailsViewController.swift */,
+				D4EEA1561C0C95930010775B /* Coffee.swift */,
+				D4C92DA51C15C94C0094496B /* CoffeeCell.swift */,
+				D4EEA1581C0C976A0010775B /* SampleData.swift */,
 				D4EEA14E1C0C923C0010775B /* Info.plist */,
 			);
 			path = AppMacProject;
@@ -234,7 +240,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4C92DAC1C15E0190094496B /* ShopPickerViewController.swift in Sources */,
 				D4EEA1451C0C923C0010775B /* ViewController.swift in Sources */,
+				D4C92DAA1C15D2D90094496B /* CoffeeDetailsViewController.swift in Sources */,
 				D4EEA1551C0C93F40010775B /* CoffeesViewController.swift in Sources */,
 				D4EEA1431C0C923C0010775B /* AppDelegate.swift in Sources */,
 				D4EEA1591C0C976A0010775B /* SampleData.swift in Sources */,
