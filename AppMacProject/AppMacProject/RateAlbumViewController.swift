@@ -1,5 +1,5 @@
 //
-//  RateCoffeeViewController.swift
+//  RateAlbumViewController.swift
 //  AppMacProject
 //
 //  Created by 20064234 on 08/12/2015.
@@ -8,13 +8,13 @@
 
 import UIKit
 
-class RateCoffeeViewController: UIViewController {
+class RateAlbumViewController: UIViewController {
     
-    var coffeeToRate:Coffee!
+    var albumToRate:Album!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = self.coffeeToRate.name;
+        self.title = self.albumToRate.name;
     }
     
     override func didReceiveMemoryWarning() {
@@ -26,7 +26,7 @@ class RateCoffeeViewController: UIViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let button = sender as? UIButton{
-            coffeeToRate.rating = button.tag
+            albumToRate.rating = button.tag
         }
     }
     

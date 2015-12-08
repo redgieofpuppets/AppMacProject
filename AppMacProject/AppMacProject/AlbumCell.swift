@@ -1,5 +1,5 @@
 //
-//  CoffeeCell.swift
+//  AlbumCell.swift
 //  AppMacProject
 //
 //  Created by 20064234 on 30/11/2015.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CoffeeCell: UITableViewCell {
+class AlbumCell: UITableViewCell {
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var artistLabel: UILabel!

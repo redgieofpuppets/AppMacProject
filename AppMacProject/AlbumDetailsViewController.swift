@@ -1,5 +1,5 @@
 //
-//  CoffeeDetailsViewController.swift
+//  AlbumDetailsViewController.swift
 //  AppMacProject
 //
 //  Created by 20064234 on 07/12/2015.
@@ -8,12 +8,12 @@
 
 import UIKit
 
-class CoffeeDetailsViewController: UITableViewController {
+class AlbumDetailsViewController: UITableViewController {
     
-    var coffee:Coffee!
-    var artist:String = "Centra"
+    var album:Album!
+    var artist:String = "AC/DC"
     
-    var coffeeToEdit:Coffee?
+    var albumToEdit:Album?
     
     @IBOutlet weak var nameTextField: UITextField!
     
@@ -23,24 +23,24 @@ class CoffeeDetailsViewController: UITableViewController {
     
     
     required init(coder aDecoder: NSCoder) {
-        //println("init CoffeeDetailsViewController")
+        //println("init AlbumDetailsViewController")
         super.init(coder: aDecoder)!
     }
     
     deinit {
-        //println("deinit CoffeeDetailsViewController")
+        //println("deinit AlbumDetailsViewController")
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if(coffeeToEdit != nil){
-            self.title = "Edit Coffee"
-            nameTextField.text = coffeeToEdit!.name
-            artist = coffeeToEdit!.artist
+        if(albumToEdit != nil){
+            self.title = "Edit Album"
+            nameTextField.text = albumToEdit!.name
+            artist = albumToEdit!.artist
         }
         else{
-            artist = "Centra"
+            artist = "AC/DC"
             deleteButtonCell.hidden = true
         }
         detailLabel.text = artist
@@ -59,13 +59,13 @@ class CoffeeDetailsViewController: UITableViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "SaveCoffeeDetail" {
-            if (self.coffeeToEdit != nil){
-                self.coffeeToEdit?.name = self.nameTextField.text!
-                self.coffeeToEdit?.artist = artist
+        if segue.identifier == "SaveAlbumDetail" {
+            if (self.albumToEdit != nil){
+                self.albumToEdit?.name = self.nameTextField.text!
+                self.albumToEdit?.artist = artist
             }
             else{
-                coffee = Coffee(name: self.nameTextField.text!, artist: artist, rating: 3)
+                album = Album(name: self.nameTextField.text!, artist: artist, rating: 3)
             }
         }
         if segue.identifier == "PickArtist" {

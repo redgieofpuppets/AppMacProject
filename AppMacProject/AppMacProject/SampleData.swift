@@ -8,6 +8,6 @@
 
 import Foundation
 
-let coffeesData = [ Coffee(name:"Americano", artist:"Hot House Bistro", rating: 1),
-    Coffee(name:"Cappuccino", artist:"Centra", rating: 5),
-    Coffee(name:"Latte", artist:"The Gallery", rating: 3)]
+let albumsData = [ Album(name:"Americano", artist:"Alice in Chains", rating: 4),
+    Album(name:"Back in Black", artist:"AC/DC", rating: 3),
+    Album(name:"Among the Living", artist:"Anthrax", rating: 3)]

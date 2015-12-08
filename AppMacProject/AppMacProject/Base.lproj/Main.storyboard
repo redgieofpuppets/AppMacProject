@@ -4,16 +4,16 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <scenes>
-        <!--Coffees-->
+        <!--Albums-->
         <scene sceneID="cIV-5Z-9dm">
             <objects>
-                <tableViewController id="jQB-Pc-ObU" customClass="CoffeesViewController" customModule="AppMacProject" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="jQB-Pc-ObU" customClass="AlbumsViewController" customModule="AppMacProject" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="55" sectionHeaderHeight="22" sectionFooterHeight="22" id="5td-52-dl6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="CoffeeCell" rowHeight="55" id="lkI-xu-D7O" customClass="CoffeeCell" customModule="AppMacProject" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="AlbumCell" rowHeight="55" id="lkI-xu-D7O" customClass="AlbumCell" customModule="AppMacProject" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="22" width="320" height="55"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lkI-xu-D7O" id="J06-3v-Sqo">
@@ -44,8 +44,8 @@
                                     <outlet property="artistLabel" destination="347-V8-GXs" id="ba8-bb-rYr"/>
                                     <outlet property="nameLabel" destination="XA9-xa-R0M" id="DAr-OD-Sw9"/>
                                     <outlet property="ratingImageView" destination="VEd-2Z-b23" id="oZZ-5j-tuh"/>
-                                    <segue destination="ggl-2D-6Mi" kind="modal" identifier="EditCoffee" trigger="accessoryAction" id="tNP-wY-Npd"/>
-                                    <segue destination="foZ-ya-EHI" kind="push" identifier="RateCoffee" id="7SR-0x-9Gx"/>
+                                    <segue destination="ggl-2D-6Mi" kind="modal" identifier="EditAlbum" trigger="accessoryAction" id="tNP-wY-Npd"/>
+                                    <segue destination="foZ-ya-EHI" kind="push" identifier="RateAlbum" id="7SR-0x-9Gx"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -54,10 +54,10 @@
                             <outlet property="delegate" destination="jQB-Pc-ObU" id="owU-dj-rWC"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Coffees" id="K3r-nO-Uhm">
+                    <navigationItem key="navigationItem" title="Albums" id="K3r-nO-Uhm">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="oU4-UK-GDh">
                             <connections>
-                                <segue destination="ggl-2D-6Mi" kind="modal" identifier="AddCoffee" id="En5-GF-eQg"/>
+                                <segue destination="ggl-2D-6Mi" kind="modal" identifier="AddAlbum" id="En5-GF-eQg"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -66,10 +66,10 @@
             </objects>
             <point key="canvasLocation" x="645" y="354"/>
         </scene>
-        <!--Rate Coffee-->
+        <!--Rate Album-->
         <scene sceneID="lSZ-Rw-bl0">
             <objects>
-                <viewController id="foZ-ya-EHI" customClass="RateCoffeeViewController" customModule="AppMacProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="foZ-ya-EHI" customClass="RateAlbumViewController" customModule="AppMacProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ruX-37-Tp5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -81,7 +81,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Scq-WR-Aaf" kind="unwind" unwindAction="saveCoffeeRating:" id="Bjd-kO-Qeq"/>
+                                    <segue destination="Scq-WR-Aaf" kind="unwind" unwindAction="saveAlbumRating:" id="Bjd-kO-Qeq"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="AqS-Yh-Nuc">
@@ -91,7 +91,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Scq-WR-Aaf" kind="unwind" unwindAction="saveCoffeeRating:" id="gLA-dR-eAt"/>
+                                    <segue destination="Scq-WR-Aaf" kind="unwind" unwindAction="saveAlbumRating:" id="gLA-dR-eAt"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="gpK-bP-At2">
@@ -101,7 +101,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Scq-WR-Aaf" kind="unwind" unwindAction="saveCoffeeRating:" id="hqB-93-IVB"/>
+                                    <segue destination="Scq-WR-Aaf" kind="unwind" unwindAction="saveAlbumRating:" id="hqB-93-IVB"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="p8b-Sv-6my">
@@ -111,7 +111,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Scq-WR-Aaf" kind="unwind" unwindAction="saveCoffeeRating:" id="had-Sf-zps"/>
+                                    <segue destination="Scq-WR-Aaf" kind="unwind" unwindAction="saveAlbumRating:" id="had-Sf-zps"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="0a6-kj-lG1">
@@ -121,29 +121,29 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Scq-WR-Aaf" kind="unwind" unwindAction="saveCoffeeRating:" id="f0A-fw-gKj"/>
+                                    <segue destination="Scq-WR-Aaf" kind="unwind" unwindAction="saveAlbumRating:" id="f0A-fw-gKj"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Rate Coffee" id="Ew5-rT-Mzo"/>
+                    <navigationItem key="navigationItem" title="Rate Album" id="Ew5-rT-Mzo"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QAg-oB-cHf" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Scq-WR-Aaf" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="645" y="1099"/>
         </scene>
-        <!--Add Coffee-->
+        <!--Add Album-->
         <scene sceneID="w47-rb-nxP">
             <objects>
-                <tableViewController id="dD8-IV-h5s" customClass="CoffeeDetailsViewController" customModule="AppMacProject" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="dD8-IV-h5s" customClass="AlbumDetailsViewController" customModule="AppMacProject" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="PzI-rU-lcu">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
-                            <tableViewSection headerTitle="Coffee Name" id="Jpe-rP-5S5">
+                            <tableViewSection headerTitle="Album Name" id="Jpe-rP-5S5">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="TZe-th-Wid">
                                         <rect key="frame" x="0.0" y="114" width="320" height="44"/>
@@ -212,13 +212,13 @@
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
-                                                        <segue destination="iw1-Ov-l7i" kind="unwind" unwindAction="deleteCoffee:" id="vvl-6y-sgA"/>
+                                                        <segue destination="iw1-Ov-l7i" kind="unwind" unwindAction="deleteAlbum:" id="vvl-6y-sgA"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="iw1-Ov-l7i" kind="unwind" unwindAction="deleteCoffee:" id="8WG-2o-jWV"/>
+                                            <segue destination="iw1-Ov-l7i" kind="unwind" unwindAction="deleteAlbum:" id="8WG-2o-jWV"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -229,15 +229,15 @@
                             <outlet property="delegate" destination="dD8-IV-h5s" id="izA-vL-i7c"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Add Coffee" id="4GA-WN-Rt8">
+                    <navigationItem key="navigationItem" title="Add Album" id="4GA-WN-Rt8">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="bcE-61-Mlw">
                             <connections>
-                                <segue destination="iw1-Ov-l7i" kind="unwind" identifier="CancelCoffeeDetail" unwindAction="cancelToCoffeesViewController:" id="2Ya-CJ-6W8"/>
+                                <segue destination="iw1-Ov-l7i" kind="unwind" identifier="CancelAlbumDetail" unwindAction="cancelToAlbumsViewController:" id="2Ya-CJ-6W8"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="HZr-Ob-kK3">
                             <connections>
-                                <segue destination="iw1-Ov-l7i" kind="unwind" identifier="SaveCoffeeDetail" unwindAction="saveCoffeeDetail:" id="fgW-hQ-5Xk"/>
+                                <segue destination="iw1-Ov-l7i" kind="unwind" identifier="SaveAlbumDetail" unwindAction="saveAlbumDetail:" id="fgW-hQ-5Xk"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
