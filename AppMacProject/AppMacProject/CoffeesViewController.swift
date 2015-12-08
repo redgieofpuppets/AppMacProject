@@ -51,6 +51,18 @@ class CoffeesViewController: UITableViewController {
     @IBAction func saveCoffeeDetail(segue:UIStoryboardSegue) {
         let coffeeDetailsViewController = segue.sourceViewController as! CoffeeDetailsViewController
         
+        if let coffeeToEdit = coffeeDetailsViewController.coffeeToEdit {
+            // get index of coffeeToEdit in coffees array
+            let coffeeToEditIndex = find(coffees, coffeeToEdit)!
+            
+            // get indexPath of coffeeToEdit in tableView
+            let indexPath = NSIndexPath(forRow: coffeeToEditIndex, inSection:0)
+            
+            // reload that individual row
+            tableView.reloadRowsAtIndexPaths([indexPath],
+                withRowAnimation: .Automatic) 
+        }
+        
         //add the new coffee to the coffees array
         coffees.append(coffeeDetailsViewController.coffee)
         
@@ -63,6 +75,39 @@ class CoffeesViewController: UITableViewController {
     }
     
     // MARK: - Table view data source
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "EditCoffee" {
+            let navigationController = segue.destinationViewController as! UINavigationController
+            let coffeeDetailsViewController = navigationController.viewControllers[0] as! CoffeeDetailsViewController
+            
+            let cell = sender as! UITableViewCell
+            let indexPath = tableView.indexPathForCell(cell)
+            let selectedCoffeeIndex = indexPath?.row
+            
+            if let index = selectedCoffeeIndex {
+                let coffee = coffees[index]
+                coffeeDetailsViewController.coffeeToEdit = coffee
+            }
+        }
+//        else if segue.identifier == "RateCoffee" {
+//            let rateCoffeeViewController = segue.destinationViewController as! RateCoffeeViewController
+//            
+//            let cell = sender as! UITableViewCell
+//            let indexPath = tableView.indexPathForCell(cell)
+//            let selectedCoffeeIndex = indexPath?.row
+//            
+//            if let index = selectedCoffeeIndex {
+//                let coffee = coffees[index]
+//                rateCoffeeViewController.coffeeToRate = coffee
+//            }
+//        }
+    }
+
+    
+    
+    
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
