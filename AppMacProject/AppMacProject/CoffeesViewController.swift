@@ -44,70 +44,7 @@ class CoffeesViewController: UITableViewController {
         }
     }
     
-    @IBAction func cancelToCoffeesViewController(segue:UIStoryboardSegue) {
-        
-    }
-    
-    @IBAction func saveCoffeeDetail(segue:UIStoryboardSegue) {
-        let coffeeDetailsViewController = segue.sourceViewController as! CoffeeDetailsViewController
-        
-        if let coffeeToEdit = coffeeDetailsViewController.coffeeToEdit {
-            // get index of coffeeToEdit in coffees array
-            let coffeeToEditIndex = find(coffees, coffeeToEdit)!
-            
-            // get indexPath of coffeeToEdit in tableView
-            let indexPath = NSIndexPath(forRow: coffeeToEditIndex, inSection:0)
-            
-            // reload that individual row
-            tableView.reloadRowsAtIndexPaths([indexPath],
-                withRowAnimation: .Automatic) 
-        }
-        
-        //add the new coffee to the coffees array
-        coffees.append(coffeeDetailsViewController.coffee)
-        
-        //update the tableView
-        let indexPath = NSIndexPath(forRow: coffees.count-1, inSection: 0)
-        tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
-        
-        //hide the detail view controller
-        dismissViewControllerAnimated(true, completion: nil)
-    }
-    
     // MARK: - Table view data source
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
-        if segue.identifier == "EditCoffee" {
-            let navigationController = segue.destinationViewController as! UINavigationController
-            let coffeeDetailsViewController = navigationController.viewControllers[0] as! CoffeeDetailsViewController
-            
-            let cell = sender as! UITableViewCell
-            let indexPath = tableView.indexPathForCell(cell)
-            let selectedCoffeeIndex = indexPath?.row
-            
-            if let index = selectedCoffeeIndex {
-                let coffee = coffees[index]
-                coffeeDetailsViewController.coffeeToEdit = coffee
-            }
-        }
-//        else if segue.identifier == "RateCoffee" {
-//            let rateCoffeeViewController = segue.destinationViewController as! RateCoffeeViewController
-//            
-//            let cell = sender as! UITableViewCell
-//            let indexPath = tableView.indexPathForCell(cell)
-//            let selectedCoffeeIndex = indexPath?.row
-//            
-//            if let index = selectedCoffeeIndex {
-//                let coffee = coffees[index]
-//                rateCoffeeViewController.coffeeToRate = coffee
-//            }
-//        }
-    }
-
-    
-    
-    
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
@@ -116,7 +53,6 @@ class CoffeesViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return coffees.count
     }
-    
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath)
         -> UITableViewCell {
@@ -168,17 +104,15 @@ class CoffeesViewController: UITableViewController {
     }
     */
     
-    /*
-    // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-    if editingStyle == .Delete {
-    // Delete the row from the data source
-    tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-    } else if editingStyle == .Insert {
-    // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        if editingStyle == .Delete {
+            // Delete the row from the data source
+            coffees.removeAtIndex(indexPath.row)
+            // Delete the row from the tableview
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            
+        }
     }
-    }
-    */
     
     /*
     // Override to support rearranging the table view.
@@ -195,14 +129,104 @@ class CoffeesViewController: UITableViewController {
     }
     */
     
-    /*
     // MARK: - Navigation
     
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "EditCoffee" {
+            let navigationController = segue.destinationViewController as! UINavigationController
+            let coffeeDetailsViewController = navigationController.viewControllers[0] as! CoffeeDetailsViewController
+            
+            let cell = sender as! UITableViewCell
+            let indexPath = tableView.indexPathForCell(cell)
+            let selectedCoffeeIndex = indexPath?.row
+            
+            if let index = selectedCoffeeIndex {
+                let coffee = coffees[index]
+                coffeeDetailsViewController.coffeeToEdit = coffee
+            }
+        }
+        else if segue.identifier == "RateCoffee" {
+            let rateCoffeeViewController = segue.destinationViewController as! RateCoffeeViewController
+            
+            let cell = sender as! UITableViewCell
+            let indexPath = tableView.indexPathForCell(cell)
+            let selectedCoffeeIndex = indexPath?.row
+            
+            if let index = selectedCoffeeIndex {
+                let coffee = coffees[index]
+                rateCoffeeViewController.coffeeToRate = coffee
+            }
+        }
     }
-    */
+    
+    @IBAction func cancelToCoffeesViewController(segue:UIStoryboardSegue) {
+        
+    }
+    
+    @IBAction func saveCoffeeDetail(segue:UIStoryboardSegue) {
+        let coffeeDetailsViewController = segue.sourceViewController as! CoffeeDetailsViewController
+        
+        if let coffeeToEdit = coffeeDetailsViewController.coffeeToEdit {
+            // get index of coffeeToEdit in coffees array
+            let coffeeToEditIndex = coffees.indexOf(coffeeToEdit)
+            
+            // get indexPath of coffeeToEdit in tableView
+            let indexPath = NSIndexPath(forRow: coffeeToEditIndex!, inSection: 0)
+            
+            // reload that individual row
+            tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+        }
+        else {
+            //add the new coffee to the coffees array
+            coffees.append(coffeeDetailsViewController.coffee)
+            
+            //update the tableView
+            let indexPath = NSIndexPath(forRow: coffees.count-1, inSection: 0)
+            tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+        }
+        
+        //hide the detail view controller
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    @IBAction func saveCoffeeRating(segue:UIStoryboardSegue) {
+        let rateCoffeeViewController = segue.sourceViewController as! RateCoffeeViewController
+        
+        if let coffeeToRate = rateCoffeeViewController.coffeeToRate {
+            // get index of coffeeToRate in coffees array
+            let coffeeToRateIndex = coffees.indexOf(coffeeToRate)
+            
+            // get indexPath of coffeeToRate in tableView
+            let indexPath = NSIndexPath(forRow: coffeeToRateIndex!, inSection: 0)
+            
+            // reload that individual row
+            tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+        }
+        
+        //hide the rateCoffeeView controller
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    @IBAction func deleteCoffee(segue:UIStoryboardSegue) {
+        let coffeeDetailsViewController = segue.sourceViewController as! CoffeeDetailsViewController
+        
+        if let coffeeToEdit = coffeeDetailsViewController.coffeeToEdit {
+            // get index of coffeeToEdit in coffees array
+            let coffeeToEditIndex = coffees.indexOf(coffeeToEdit)
+            
+            // get indexPath of coffeeToEdit in tableView
+            let indexPath = NSIndexPath(forRow: coffeeToEditIndex!, inSection: 0)
+            
+            // delete coffee from array
+            coffees.removeAtIndex(coffeeToEditIndex!)
+            
+            // delete that individual row
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation:UITableViewRowAnimation.Fade)
+        }
+        
+        //hide the detail view controller
+        dismissViewControllerAnimated(true, completion: nil)
+    }
     
 }

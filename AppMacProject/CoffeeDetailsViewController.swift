@@ -19,30 +19,34 @@ class CoffeeDetailsViewController: UITableViewController {
     
     @IBOutlet weak var detailLabel: UILabel!
     
+    @IBOutlet weak var deleteButtonCell: UITableViewCell!
+    
+    
     required init(coder aDecoder: NSCoder) {
-        print("init CoffeeDetailsViewController")
+        //println("init CoffeeDetailsViewController")
         super.init(coder: aDecoder)!
     }
     
     deinit {
-        print("deinit CoffeeDetailsViewController")
+        //println("deinit CoffeeDetailsViewController")
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if(coffeeToEdit != nil)
-        {
-                self.title = "Edit Coffee"
-                nameTextField.text=coffeeToEdit!.name
-                shop=coffeeToEdit!.shop
-        } 
-        else
-        { 
+        
+        if(coffeeToEdit != nil){
+            self.title = "Edit Coffee"
+            nameTextField.text = coffeeToEdit!.name
+            shop = coffeeToEdit!.shop
+        }
+        else{
             shop = "Centra"
-        } 
+            deleteButtonCell.hidden = true
+        }
         detailLabel.text = shop
     }
-
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -69,7 +73,6 @@ class CoffeeDetailsViewController: UITableViewController {
             shopPickerViewController.selectedShop = shop
         }
     }
-
     
     @IBAction func selectedShop(segue:UIStoryboardSegue) {
         let shopPickerViewController = segue.sourceViewController as! ShopPickerViewController
