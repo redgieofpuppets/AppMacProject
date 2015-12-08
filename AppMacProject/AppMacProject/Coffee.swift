@@ -11,12 +11,12 @@ import UIKit
 
 class Coffee: NSObject {
     var name: String
-    var shop: String
+    var artist: String
     var rating: Int
     
-    init(name: String, shop: String, rating: Int) {
+    init(name: String, artist: String, rating: Int) {
         self.name = name
-        self.shop = shop
+        self.artist = artist
         self.rating = rating
         super.init()
     }

@@ -11,7 +11,7 @@ import UIKit
 class CoffeeCell: UITableViewCell {
     
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var shopLabel: UILabel!
+    @IBOutlet weak var artistLabel: UILabel!
     @IBOutlet weak var ratingImageView: UIImageView!
     
     override func awakeFromNib() {

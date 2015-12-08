@@ -14,7 +14,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="CoffeeCell" rowHeight="55" id="lkI-xu-D7O" customClass="CoffeeCell" customModule="AppMacProject" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="86" width="320" height="55"/>
+                                <rect key="frame" x="0.0" y="22" width="320" height="55"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lkI-xu-D7O" id="J06-3v-Sqo">
                                     <rect key="frame" x="0.0" y="0.0" width="253" height="54"/>
@@ -27,7 +27,7 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shop" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="347-V8-GXs">
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="347-V8-GXs">
                                             <rect key="frame" x="8" y="25" width="156" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -41,9 +41,9 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="artistLabel" destination="347-V8-GXs" id="ba8-bb-rYr"/>
                                     <outlet property="nameLabel" destination="XA9-xa-R0M" id="DAr-OD-Sw9"/>
                                     <outlet property="ratingImageView" destination="VEd-2Z-b23" id="oZZ-5j-tuh"/>
-                                    <outlet property="shopLabel" destination="347-V8-GXs" id="ba8-bb-rYr"/>
                                     <segue destination="ggl-2D-6Mi" kind="modal" identifier="EditCoffee" trigger="accessoryAction" id="tNP-wY-Npd"/>
                                     <segue destination="foZ-ya-EHI" kind="push" identifier="RateCoffee" id="7SR-0x-9Gx"/>
                                 </connections>
@@ -146,7 +146,7 @@
                             <tableViewSection headerTitle="Coffee Name" id="Jpe-rP-5S5">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="TZe-th-Wid">
-                                        <rect key="frame" x="0.0" y="50" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="114" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TZe-th-Wid" id="LRn-cJ-Ym0">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -166,19 +166,21 @@
                             <tableViewSection id="Tzm-mb-wUl">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="2wI-N6-ZgM" detailTextLabel="xQv-t5-41g" style="IBUITableViewCellStyleValue1" id="IhK-b9-hNG">
-                                        <rect key="frame" x="0.0" y="114" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="178" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IhK-b9-hNG" id="mwt-Jr-wta">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Shop" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2wI-N6-ZgM">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Artist" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2wI-N6-ZgM">
+                                                    <rect key="frame" x="15" y="12" width="40" height="20"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xQv-t5-41g">
+                                                    <rect key="frame" x="243" y="12" width="42" height="20"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
@@ -187,7 +189,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="tEB-ZR-5do" kind="push" identifier="PickShop" id="h9b-O1-Ddd"/>
+                                            <segue destination="tEB-ZR-5do" kind="push" identifier="PickArtist" id="h9b-O1-Ddd"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -195,7 +197,7 @@
                             <tableViewSection id="6Pl-9w-nXY">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Odk-HZ-c56">
-                                        <rect key="frame" x="0.0" y="178" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="242" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Odk-HZ-c56" id="cDi-aP-lIO">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -250,23 +252,24 @@
             </objects>
             <point key="canvasLocation" x="1538" y="354"/>
         </scene>
-        <!--Choose Shop-->
+        <!--Choose Artist-->
         <scene sceneID="Npd-5B-gFN">
             <objects>
-                <tableViewController id="tEB-ZR-5do" customClass="ShopPickerViewController" customModule="AppMacProject" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="tEB-ZR-5do" customClass="ArtistPickerViewController" customModule="AppMacProject" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="bf7-dx-138">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ShopCell" textLabel="5JO-t3-CXj" style="IBUITableViewCellStyleDefault" id="WiR-XV-pOT">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ArtistCell" textLabel="5JO-t3-CXj" style="IBUITableViewCellStyleDefault" id="WiR-XV-pOT">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WiR-XV-pOT" id="Lg9-7o-VmH">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5JO-t3-CXj">
+                                            <rect key="frame" x="15" y="0.0" width="290" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -275,7 +278,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="HrE-7P-3nB" kind="unwind" identifier="SaveSelectedShop" unwindAction="selectedShop:" id="3CT-tX-kfb"/>
+                                    <segue destination="HrE-7P-3nB" kind="unwind" identifier="SaveSelectedArtist" unwindAction="selectedArtist:" id="3CT-tX-kfb"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -284,7 +287,7 @@
                             <outlet property="delegate" destination="tEB-ZR-5do" id="YVI-Mm-qLD"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Choose Shop" id="8tL-lq-7gb"/>
+                    <navigationItem key="navigationItem" title="Choose Artist" id="8tL-lq-7gb"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fMl-y1-gxK" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="HrE-7P-3nB" userLabel="Exit" sceneMemberID="exit"/>

@@ -14,12 +14,7 @@ class CoffeesViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    
     }
     
     override func didReceiveMemoryWarning() {
@@ -63,7 +58,7 @@ class CoffeesViewController: UITableViewController {
             
             let coffee = coffees[indexPath.row] as Coffee
             cell.textLabel?.text = coffee.name
-            cell.detailTextLabel?.text = coffee.shop
+            cell.detailTextLabel?.text = coffee.artist
             return cell
             */
             
@@ -76,8 +71,8 @@ class CoffeesViewController: UITableViewController {
             if let nameLabel = cell.viewWithTag(100) as? UILabel { //3
             nameLabel.text = coffee.name
             }
-            if let shopLabel = cell.viewWithTag(101) as? UILabel {
-            shopLabel.text = coffee.shop
+            if let artistLabel = cell.viewWithTag(101) as? UILabel {
+            artistLabel.text = coffee.artist
             }
             if let ratingImageView = cell.viewWithTag(102) as? UIImageView {
             ratingImageView.image = self.imageForRating(coffee.rating)
@@ -91,7 +86,7 @@ class CoffeesViewController: UITableViewController {
             
             let coffee = coffees[indexPath.row] as Coffee
             cell.nameLabel.text = coffee.name
-            cell.shopLabel.text = coffee.shop
+            cell.artistLabel.text = coffee.artist
             cell.ratingImageView.image = imageForRating(coffee.rating)
             return cell
     }

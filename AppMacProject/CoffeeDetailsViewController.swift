@@ -11,7 +11,7 @@ import UIKit
 class CoffeeDetailsViewController: UITableViewController {
     
     var coffee:Coffee!
-    var shop:String = "Centra"
+    var artist:String = "Centra"
     
     var coffeeToEdit:Coffee?
     
@@ -37,13 +37,13 @@ class CoffeeDetailsViewController: UITableViewController {
         if(coffeeToEdit != nil){
             self.title = "Edit Coffee"
             nameTextField.text = coffeeToEdit!.name
-            shop = coffeeToEdit!.shop
+            artist = coffeeToEdit!.artist
         }
         else{
-            shop = "Centra"
+            artist = "Centra"
             deleteButtonCell.hidden = true
         }
-        detailLabel.text = shop
+        detailLabel.text = artist
     }
     
     
@@ -62,23 +62,23 @@ class CoffeeDetailsViewController: UITableViewController {
         if segue.identifier == "SaveCoffeeDetail" {
             if (self.coffeeToEdit != nil){
                 self.coffeeToEdit?.name = self.nameTextField.text!
-                self.coffeeToEdit?.shop = shop
+                self.coffeeToEdit?.artist = artist
             }
             else{
-                coffee = Coffee(name: self.nameTextField.text!, shop: shop, rating: 3)
+                coffee = Coffee(name: self.nameTextField.text!, artist: artist, rating: 3)
             }
         }
-        if segue.identifier == "PickShop" {
-            let shopPickerViewController = segue.destinationViewController as! ShopPickerViewController
-            shopPickerViewController.selectedShop = shop
+        if segue.identifier == "PickArtist" {
+            let artistPickerViewController = segue.destinationViewController as! ArtistPickerViewController
+            artistPickerViewController.selectedArtist = artist
         }
     }
     
-    @IBAction func selectedShop(segue:UIStoryboardSegue) {
-        let shopPickerViewController = segue.sourceViewController as! ShopPickerViewController
-        if let selectedShop = shopPickerViewController.selectedShop {
-            detailLabel.text = selectedShop
-            shop = selectedShop
+    @IBAction func selectedArtist(segue:UIStoryboardSegue) {
+        let artistPickerViewController = segue.sourceViewController as! ArtistPickerViewController
+        if let selectedArtist = artistPickerViewController.selectedArtist {
+            detailLabel.text = selectedArtist
+            artist = selectedArtist
         }
     }
 }
