@@ -8,6 +8,6 @@
 
 import Foundation
 
-let albumsData = [ Album(name:"Americano", artist:"Alice in Chains", rating: 4),
+let albumsData = [ Album(name:"Dirt", artist:"Alice in Chains", rating: 4),
     Album(name:"Back in Black", artist:"AC/DC", rating: 3),
     Album(name:"Among the Living", artist:"Anthrax", rating: 3)]
