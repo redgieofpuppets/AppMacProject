@@ -17,12 +17,48 @@ class ArtistPickerViewController: UITableViewController {
         self.view.backgroundColor = UIColor.blackColor()
         
         artists = ["AC/DC",
+            "Airbourne",
             "Alice in Chains",
+            "Alter Bridge",
+            "Annihilator",
             "Anthrax",
+            "Audioslave",
+            "Avenged Sevenfold",
+            "Black Tide",
+            "Blue Stahli",
             "Bon Jovi",
+            "Bruce Springsteen",
+            "Bullet for my Valentine",
+            "The Cranberries",
+            "The Darkness",
+            "Disturbed",
+            "The Doors",
+            "Evile",
             "Guns n Roses",
+            "Halestorm",
+            "Iron Maiden",
+            "Katy Perry",
+            "KoRn",
+            "Lady Gaga",
+            "Lordi",
+            "Mastodon",
+            "Megadeth",
             "Metallica",
-            "Thin Lizzy"]
+            "Muse",
+            "Pearl Jam",
+            "Queens of the Stone Age",
+            "Rammstein",
+            "Slash",
+            "Steel Panther",
+            "Stevie Wonder",
+            "Thin Lizzy",
+            "Trivium",
+            "Velvet Revolver",
+            "12 Gauge Outrage",
+            "3teeth",
+            
+            
+        ]
         
         if let artist = selectedArtist {
             selectedArtistIndex = artists.indexOf(artist)!
