@@ -15,6 +15,7 @@ class RateAlbumViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = self.albumToRate.name;
+        self.view.backgroundColor = UIColor.blackColor()
     }
     
     override func didReceiveMemoryWarning() {

@@ -14,6 +14,8 @@ class ArtistPickerViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor.blackColor()
+        
         artists = ["AC/DC",
             "Alice in Chains",
             "Anthrax",

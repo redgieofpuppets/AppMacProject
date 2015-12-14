@@ -14,6 +14,7 @@ class AlbumsViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor.blackColor()
     
     }
     

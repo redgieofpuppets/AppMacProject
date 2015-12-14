@@ -33,6 +33,7 @@ class AlbumDetailsViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor.blackColor()
         
         if(albumToEdit != nil){
             self.title = "Edit Album"
